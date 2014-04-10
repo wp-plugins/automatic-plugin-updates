@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Enables automatic background updates of plugins. Supports excluding selected plugins from being automatically updated.
 
 == Description ==
-This plugin turns on automatic background updates for plugins.
+This plugin turns on <a href="http://codex.wordpress.org/Configuring_Automatic_Background_Updates">automatic background updates</a> for plugins.
 
 If you have plugins that you don't want automatically updated those can be excluded from being automatically updated on the settings page for this plugin. The plugin also enables email alerts being sent for automatic plugin updates.
 
