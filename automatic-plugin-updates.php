@@ -3,7 +3,7 @@
 Plugin Name: Automatic Plugin Updates
 Plugin URI: http://www.whitefirdesign.com/automatic-plugin-updates
 Description: Enables automatic background updates of plugins. Supports excluding selected plugins from being automatically updated.
-Version: 1.0
+Version: 1.0.1
 Author: White Fir Design
 Author URI: http://www.whitefirdesign.com/
 License: GPLv2
@@ -47,8 +47,8 @@ function check_if_excluded_plugin ($update,$item) {
 	else
 		return true;
 	
-	//WordPress 3.9 includes all plugin data in $item
-	if (version_compare(get_bloginfo('version'),'3.9','>='))
+	//Starting with WordPress 3.8.2 all plugin data is included in $item
+	if (version_compare(get_bloginfo('version'),'3.8.2','>='))
 		$plugin_to_check = $item->plugin;
 	else
 		$plugin_to_check = $item;
