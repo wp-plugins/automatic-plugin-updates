@@ -26,10 +26,10 @@ If you have plugins that you don't want automatically updated those can be exclu
 
 == Changelog ==
 = 1.0.2 =
-* Minor code cleanup.
+* Minor code cleanup
 
 = 1.0.1 =
-* Fixed issue with excluded plugin check when using WordPress 3.8.2 or 3.8.3.
+* Fixed issue with excluded plugin check when using WordPress 3.8.2 or 3.8.3
 
 = 1.0 =
 * Initial release
