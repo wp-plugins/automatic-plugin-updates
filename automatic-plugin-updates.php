@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Automatic Plugin Updates
-Plugin URI: http://www.whitefirdesign.com/automatic-plugin-updates
+Plugin URI: https://www.whitefirdesign.com/automatic-plugin-updates
 Description: Enables automatic background updates of plugins. Supports excluding selected plugins from being automatically updated.
-Version: 1.0.1
+Version: 1.0.2
 Author: White Fir Design
-Author URI: http://www.whitefirdesign.com/
+Author URI: https://www.whitefirdesign.com/
 License: GPLv2
 Text Domain: automatic-plugin-updates
 Domain Path: /languages
@@ -59,7 +59,7 @@ function check_if_excluded_plugin ($update,$item) {
 		return true;
 }
 
-//Enable automatic plugin updates while checking for execlude plugin
+//Enable automatic plugin updates while checking for excluded plugins
 add_filter( 'auto_update_plugin', 'check_if_excluded_plugin', 10, 2 );
 
 //Send email on plugin update
@@ -68,7 +68,7 @@ if ( (!get_option('automatic_plugin_updates_send_emails')) || ( get_option('auto
 
 //Adds settings link to menu
 function automatic_plugin_updates_add_pages() {
-	add_options_page( 'Automatic Plugin Updates', 'Automatic Plugin Updates', 10, 'automatic-plugin-updates', 'automatic_plugin_updates_page'	);
+	add_options_page( 'Automatic Plugin Updates', 'Automatic Plugin Updates', 'manage_options', 'automatic-plugin-updates', 'automatic_plugin_updates_page'	);
 }
 add_action( 'admin_menu', 'automatic_plugin_updates_add_pages' );
 
@@ -94,7 +94,7 @@ function automatic_plugin_updates_page() {
 		$excluded_plugins = get_option('automatic_plugin_updates_excluded_plugins');
 	}
 	
-	$current_plugins = get_plugins( $plugin_folder);
+	$current_plugins = get_plugins();
 	
 	echo '<div class="wrap">';
 	echo '<h2>Automatic Plugin Updates</h2><p>';
@@ -113,7 +113,7 @@ function automatic_plugin_updates_page() {
 		echo '><label for="';
 		echo $key;
 		echo '">';
-		echo $val[Name];
+		echo $val["Name"];
 		echo '</label><br><br>';
 	}
 	echo '</fieldset></td>';
